@@ -1,0 +1,590 @@
+/* Estilos Generales */
+:root {
+    --primary-color: #333; /* Color principal para texto, fondo oscuro */
+    --secondary-color: #555; /* Color secundario */
+    --accent-color: #df5210; /* Un rojo o color vibrante para acentos de Steel */
+    --light-color: #f4f4f4; /* Color de fondo claro */
+    --white-color: #ffffff;
+    --dark-color: #222;
+    --text-color: #333;
+    --heading-color: #222;
+    --border-color: #ddd;
+    --font-family: 'Arial', sans-serif; /* Puedes cambiar a una fuente de Google Fonts */
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #7a481f; /* Tono más oscuro de accent-color */
+}
+
+/* Header */
+header {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas pequeñas */
+}
+
+header .logo img {
+    height: 50px; /* Ajusta el tamaño de tu logo */
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav a {
+    color: var(--white-color);
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    display: flex;
+    margin-left: 20px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar button {
+    background: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #ec5a06;
+}
+
+/* Carrusel de Banners */
+#hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Altura del carrusel, ajusta según necesidad */
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: var(--dark-color); /* Fondo mientras carga la imagen */
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.carousel-caption h2 {
+    color: var(--white-color);
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.carousel-caption p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Sección de Productos Destacados */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-item {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 200px; /* Altura fija para las imágenes de producto */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.product-item .price {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-item .description {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.btn-view {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+    background: var(--accent-color);
+}
+
+/* Sección de Categorías Populares */
+.categories-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.categories-section h2 {
+    margin-bottom: 30px;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+}
+
+.category-card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.category-card h3 {
+    font-size: 1.2em;
+    color: var(--heading-color);
+}
+
+
+/* Call to Action Section */
+.cta-section {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.cta-section h2 {
+    color: var(--white-color);
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.cta-section form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cta-section input[type="email"] {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    max-width: 80%;
+}
+
+.cta-section .btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 2px;
+    background: var(--white-color);
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--white-color);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Estilos de la página Quiénes Somos */
+.about-us {
+    padding: 50px 0;
+}
+
+.about-us h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    color: var(--heading-color);
+}
+
+.about-us p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.mission-vision {
+    display: flex;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap; /* Para pantallas pequeñas */
+}
+
+.mission-vision .card {
+    flex: 1;
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    min-width: 300px;
+}
+
+.mission-vision .card h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.about-us ul {
+    margin-top: 20px;
+    margin-left: 20px;
+    list-style: disc;
+}
+
+.about-us ul li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+.team-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.team-section h2 {
+    margin-bottom: 30px;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 0 20px 30px 20px;
+    text-align: center;
+    max-width: 250px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.team-member h4 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .search-bar {
+        margin-top: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 70%;
+    }
+
+    #hero-carousel {
+        height: 300px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.8em;
+    }
+
+    .carousel-caption p {
+        font-size: 1em;
+    }
+
+    .product-grid, .category-list {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .cta-section form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-section input[type="email"] {
+        width: 90%;
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 30px;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .team-member {
+        margin: 0 auto 30px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero-carousel {
+        height: 250px;
+    }
+
+    .carousel-caption {
+        padding: 10px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.5em;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .about-us h1 {
+        font-size: 2em;
+    }
+
+    .mission-vision .card {
+        padding: 20px;
+    }
+
+    .mission-vision .card h3 {
+        font-size: 1.5em;
+    }
+}
